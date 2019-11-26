@@ -1,0 +1,29 @@
+{% extends "模板.html" %}
+{% block title %} 后台登录 {% endblock %}
+{% block bodys %}
+<div class="row_5">
+    <div class="container">
+        <div class="row">
+            <form method="post" enctype="multipart/form-data">
+                <p>{{ 提示信息 }}</p>
+                {% if 登录表单 %}
+                {{ 登录表单.csrf_token }}
+                {{ 登录表单.账户.label }}
+                <p>{{ 登录表单.账户 }}</p>
+                {% for error in 登录表单.账户.errors %}
+                <p>{{error}}</p>
+                {% endfor %}
+
+                {{ 登录表单.密码.label }}
+                <p>{{ 登录表单.密码}}</p>
+                {% for error in 登录表单.密码.errors %}
+                <p>{{ error }}</p>
+                {% endfor %}
+                {{ 登录表单.登录按钮}}
+                {% endif %}
+
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

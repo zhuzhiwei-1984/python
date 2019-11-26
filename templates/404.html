@@ -1,0 +1,33 @@
+{% extends "模板.html" %}
+{% block title %} 404 {% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='模板材料/js/forms.js') }}"></script>
+<script src="{{ url_for('static', filename='模板材料/js/camera.js') }}"></script>
+<!--[if (gt IE 9)|!(IE)]><!-->
+<script src="{{ url_for('static', filename='模板材料/js/jquery.mobile.customized.min.js') }}"></script>
+<!--<![endif]-->
+{% endblock%}
+{% block bodys %}
+<div class="row_10">
+  <div class="container">
+    <div class="row block-404">
+      <div class="col-lg-7 col-md-7 col-sm-7">
+        <figure class="img-polaroid"><img src="{{ url_for('static', filename='模板材料/img/404.jpg')}}" alt=""></figure>
+      </div>
+      <div class="col-lg-3 col-md-5 col-sm-5 forminfo">
+        <div>
+          <h2 class="title404_1">Sorry!</h2>
+          <p>您要查找的页面可能已被删除、名称已更改或暂时不可用</p>
+          <p>请尝试使用我们下面的搜索框来查找网站上的信息。</p>
+          <form id="search-form2" action="search.php" method="GET" accept-charset="utf-8" class="form-404 clearfix">
+            <input type="text" name="s" onBlur="if(this.value=='') this.value=''"
+              onFocus="if(this.value =='' ) this.value=''">
+            <a href="#" class="btn searchicon" onClick="document.getElementById('search-form2').submit()"><img
+                src="{{ url_for('static', filename='模板材料/img/searchimg.png')}}" alt=""></a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

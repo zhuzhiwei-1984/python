@@ -44,10 +44,13 @@
             <nav class="navbar navbar-default navbar-static-top tm_navbar" role="navigation">
                 <ul class="nav sf-menu">
                   <li {% block 主页_class %}{% endblock %}><a href="{{ url_for('视图_主页')}}">主页</a></li>
-                  <li {% block 关于我们_class %}{% endblock %}><a href="{{ url_for('视图_关于我们') }}">关于我们</a></li>
                   <li {% block 家庭相册_class %}{% endblock %}><a href="{{ url_for('视图_家庭相册') }}">家庭相册</a></li>
                   <li {% block 家庭影院_class %}{% endblock %}><a href="{{ url_for('视图_家庭影院') }}">家庭影院</a></li>
                   <li {% block 家庭书屋_class %}{% endblock %}><a href="{{ url_for('视图_家庭书屋') }}">家庭书屋</a></li>
+                  <li {% block 关于我们_class %}{% endblock %}><a href="{{ url_for('视图_关于我们') }}">关于我们</a></li>
+                  {% if 状态信息=='真' %}
+                  <li {% block 相册提交_class %}{% endblock %}><a href="{{ url_for('视图_相册提交') }}">相册提交</a></li>
+                  {% endif %}
                 </ul>
             </nav>
           </div>
@@ -72,7 +75,7 @@
                 </ul>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 footerlogo footercol">
-                <a class="smalllogo2 logo" href="{{ url_for('视图_主页')}}"><img src="{{ url_for('static', filename='模板材料/img/logofooter.png') }}" alt=""></a>
+                <a class="smalllogo2 logo" href="{{ url_for('视图_后台登录')}}"><img src="{{ url_for('static', filename='模板材料/img/logofooter.png') }}" alt=""></a>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 footercol">
                 <p class="footerpriv">&copy; 2019 &bull; More Templates <a href="http://www.zhuzhiwei-1984.vip/" target="_blank" title="朱志伟">朱志伟</a></p>
